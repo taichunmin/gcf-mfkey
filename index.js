@@ -3,7 +3,7 @@ const { MFKEY32, MFKEY32V2, MFKEY64 } = require('@bettse/mfkey')
 const functions = require('@google-cloud/functions-framework')
 const httpError = require('http-errors')
 
-cosnt padMfkey = key => key.toString(16).toUpperCase().padStart(12, '0')
+const padMfkey = key => key.toString(16).toUpperCase().padStart(12, '0')
 
 const middlewares = [
   // error handler
