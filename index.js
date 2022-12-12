@@ -12,7 +12,7 @@ const middlewares = [
       return await next()
     } catch (err) {
       exports.log('ERROR', err)
-      ctx.res.status(err.status || 500).send(err.message)
+      ctx.res.status(err.status || 500).json(_.pick(err, ['message']))
     }
   },
 
