@@ -15,6 +15,7 @@ async function mfkey64 ({ uid, nt, nr, ar, at }) {
     redirect: 'follow',
     referrer: 'no-referrer',
   })
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`)
   return (await res.json())?.key
 }
 await mfkey64({
